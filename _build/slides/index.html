@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Testing Application Boundaries &mdash; Database Testing 2015.08.01 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015.08.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+    
+    <link rel="top" title="Database Testing 2015.08.01 documentation" href="#" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  
+<article class="slide level-1" id="testing-application-boundaries">
+
+<h1>Testing Application Boundaries</h1>
+
+<div class="line-block">
+<div class="line">By: Randy Syring</div>
+<div class="line">Twitter: &#64;RandySyring</div>
+<div class="line">Email: <a class="reference external" href="mailto:randy&#46;syring&#37;&#52;&#48;level12&#46;io">randy<span>&#46;</span>syring<span>&#64;</span>level12<span>&#46;</span>io</a></div>
+<div class="line"><a class="reference external" href="https://github.com/rsyring/">https://github.com/rsyring/</a></div>
+</div>
+<q class="epigraph">
+...Software THAT WORKS!</q>
+<img alt="_images/level12-logo2.png" src="_images/level12-logo2.png" />
+
+
+
+
+</article>
+<article class="slide level-2" id="introduction">
+
+<h2>Introduction</h2>
+
+<img alt="_images/level12-logo.png" class="align-right" src="_images/level12-logo.png" />
+<p>I'm the Chief Executive Developer at <a class="reference external" href="https://www.level12.io/">Level 12</a>.</p>
+<p>Level 12 is a web &amp; database development firm that uses:</p>
+<ul class="simple">
+<li>solid engineering,</li>
+<li>proactive communication, and</li>
+<li>modern development practices</li>
+</ul>
+<p>to make our customers <strong>really, really, happy.</strong></p>
+
+
+
+
+</article>
+<article class="slide level-2" id="why-it-matters-to-you">
+
+<h2>Why it Matters to You</h2>
+
+<ul class="simple">
+<li>Level 12 ... uses... <strong>modern development practices</strong></li>
+<li>to make <strong>our customers</strong> really, really, happy</li>
+</ul>
+<p>Net result: this works and is maintainable in the &quot;real world&quot;</p>
+
+
+
+
+</article>
+<article class="slide level-2" id="some-numbers">
+
+<h2>Some Numbers</h2>
+
+<ul>
+<li><p class="first">Biggest app:</p>
+<blockquote>
+<div><ul class="simple">
+<li>6+ years</li>
+<li>7,800 Python tests</li>
+<li>350 JS tests</li>
+<li>200+ DB tables</li>
+<li>91% code coverage</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Newer app: 1 year, 1,230 Python tests, 35+ DB tables, 95% coverage</p>
+</li>
+<li><p class="first">I practice what I preach</p>
+</li>
+</ul>
+
+
+
+
+</article>
+<article class="slide level-2" id="test-types-overview">
+
+<h2>Test Types Overview</h2>
+
+<ul class="simple">
+<li>unit tests: isolate</li>
+<li>integration tests: multiple components</li>
+<li>functional tests: end to end testing</li>
+<li>acceptance tests: alias for functional tests?</li>
+<li>sytem tests: infrastructure dependent testing</li>
+<li>qa tests: let a human break it</li>
+</ul>
+<p>Your definitions may differ.</p>
+
+
+
+
+</article>
+<article class="slide level-2" id="google-s-on-to-something">
+
+<h2>Google's On To Something</h2>
+
+<img alt="_images/google-grid.png" class="fullpic" src="_images/google-grid.png" />
+<p><a class="reference external" href="http://googletesting.blogspot.com/2010/12/test-sizes.html">http://googletesting.blogspot.com/2010/12/test-sizes.html</a></p>
+
+
+
+
+</article>
+<article class="slide level-2" id="testing-in-circles">
+
+<h2>Testing in Circles</h2>
+
+<img alt="_images/circles.png" class="fullpic" src="_images/circles.png" />
+
+
+
+
+</article>
+<article class="slide level-2" id="minimze-the-dmz">
+
+<h2>Minimze the DMZ</h2>
+
+<img alt="_images/circles2.png" class="fullpic" src="_images/circles2.png" />
+
+
+
+
+</article>
+<article class="slide level-2" id="two-principles">
+
+<h2>Two Principles</h2>
+
+<ul class="simple">
+<li>Promote IO &amp; side effects to the edge (make the core bigger)</li>
+<li>Using dependency injection, mocks, etc. in the DMZ</li>
+</ul>
+
+
+
+
+</article>
+<article class="slide level-2" id="examples-today">
+
+<h2>Examples Today</h2>
+
+<ul class="simple">
+<li>File access</li>
+<li>Date/time</li>
+<li>Email</li>
+<li>Web API</li>
+</ul>
+
+
+
+
+</article>
+<article class="slide level-2" id="database-is-core">
+
+<h2>Database is Core</h2>
+
+<ul class="simple">
+<li>The database is usually too important to the application to consider it in the DMZ</li>
+<li>Google allowed DB access for their &quot;medium&quot; tests</li>
+</ul>
+
+
+
+
+</article>
+<article class="slide level-2" id="bring-on-the-code">
+
+<h2>Bring on the Code</h2>
+
+<img alt="_images/demo-meme.jpg" class="fullpic" src="_images/demo-meme.jpg" />
+<p>Code diffs: <a class="reference external" href="https://gist.github.com/rsyring">https://gist.github.com/rsyring</a></p>
+
+
+
+
+</article>
+<article class="slide level-2" id="thanks-for-attending">
+
+<h2>Thanks For Attending</h2>
+
+<div class="line-block">
+<div class="line">By: Randy Syring</div>
+<div class="line">Twitter: &#64;RandySyring</div>
+<div class="line">Email: <a class="reference external" href="mailto:randy&#46;syring&#37;&#52;&#48;level12&#46;io">randy<span>&#46;</span>syring<span>&#64;</span>level12<span>&#46;</span>io</a></div>
+<div class="line"><a class="reference external" href="https://github.com/rsyring/">https://github.com/rsyring/</a></div>
+</div>
+<p>Any questions?  I'd appreciate feedback.</p>
+
+
+
+
+</article>
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>
