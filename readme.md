@@ -19,4 +19,4 @@ Slide Viewer
 To view the slides, visit:
 [Testing Application Boundaries(slides) by Randy Syring][slides]
 
-[slides]: https://rawgit.com/rsyring/cp-2016-testing-intro-slides/master/_build/slides/index.html
+[slides]: https://cdn.rawgit.com/rsyring/cp-2016-testing-boundaries-slides/master/_build/slides/index.html
